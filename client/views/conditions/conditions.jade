@@ -1,0 +1,15 @@
+h2 {{title}}
+  .row
+    .col-xs-3
+        form(role='form', name='conditionsForm')
+          .form-group
+            label(for='zip') Enter Zip
+            input.form-control#zip(placeholder='37209', ng-model= 'zip', ng-minlength='5', ng-maxlength='5', required, type='text', name='zip', autofucus)
+          .form-group
+            button.btn.btn-success(type='submit', ng-show='conditionsForm.$valid', ng-click='getConditions()') Get Weather
+    .col-xs-6
+          img(src="{{icon}}")
+          h3(ng-show='temperature') Temp: {{temperature}}
+          h3(ng-show='weather') Weather: {{weather}}
+          h3(ng-show='wind') Wind: {{wind}}
+

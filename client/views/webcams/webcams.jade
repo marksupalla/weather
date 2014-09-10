@@ -1,0 +1,16 @@
+h2 {{title}}
+  .row
+    .col-xs-6
+        form(role='form', name='webcamsForm')
+          .form-group
+            label(for='zip') Enter Zip
+            input.form-control#zip(placeholder='37209', ng-model= 'zip', ng-minlength='5', ng-maxlength='5', required, type='text', name='zip', autofucus)
+          .form-group
+            button.btn.btn-success(type='submit', ng-show='webcamsForm.$valid', ng-click='getWebcams()') Show Webcams
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-body
+          .webcam(ng-repeat='webcam in webcams')
+            img(ng-src='{{webcam.WIDGETCURRENTIMAGEURL}}')
+
